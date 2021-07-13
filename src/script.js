@@ -5,7 +5,7 @@ const songName = $('#songname');
 const albumImage = $('#cover');
 
 if (title) {
-    songName.innerText(title);
+    songName.text(title);
 }
 
 if (img) {
