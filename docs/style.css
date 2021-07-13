@@ -1,0 +1,141 @@
+body {
+    background: transparent;
+}
+
+#everything {
+    animation: fadeIn 800ms;
+}
+
+.card.music .card-title {
+    background-color: rgba(0,0,0, 0.3);
+    width: 100%;
+}
+
+.card.music .collection {
+    border: none;
+    margin-top: 1rem;
+    overflow: visible;
+}
+
+.card.music .card-image a {
+    z-index: 2
+}
+
+.card.music .card-image {
+    position: relative;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card.music .card-image .vinyl-container {
+    position:absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: transform 500ms;
+}
+
+.card.music .card-image .vinyl-container .shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.card.music .card-image .vinyl-container.play {
+    transform: translateX(30%);
+}
+
+.waves-effect.waves-dark-orange .waves-ripple {
+    /* The alpha value allows the text and background color
+    of the button to still show through. */
+    background-color: #ff6d00;
+}
+
+.card.music .card-image .vinyl {
+    transform-origin: center center;
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: -11;
+    display: block;
+    -webkit-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/154887/vinyl.png);
+
+}
+
+.card.music .collection a.btn-flat {
+    display: flex;
+    align-items: center;
+    color: #ffab40;
+    margin-bottom: 3px;
+/*     border-radius: 0; */
+}
+
+.card.music .collection a.btn-flat:hover {
+    transition: transform 1s box-shadow 1s;
+    background-color: #ffab40;
+    color: white;
+/*     transform: translateX(10px); */
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.card.music .collection a.btn-flat.active::after {
+    content: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/154887/bars.svg);
+    width: 20px;
+    height: 15px;
+    width: 15px;
+    transform: translateY(-8px);
+    margin-left: 10px;
+}
+
+.card.music .collection a.btn-flat.active {
+    transition: transform 1s box-shadow 1s;
+    background-color: #ff6d00;
+    color: white;
+    transform: translateX(10px);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+.card.music .collection a.btn-flat.active .waves-ripple {
+    background-color: #ffab40;
+}
+
+.dark-orange {
+    background-color: #ffab40;
+}
+
+.dark-orange:hover {
+    background-color: #ff6d00;
+}
+
+.card.music .collection a.btn-flat i {
+    margin-right: 10px
+}
+
+.card.music .collection a.collection-item::after {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    content: "";
+    height: 1px;
+    background-color: white;
+    display: block;
+}
